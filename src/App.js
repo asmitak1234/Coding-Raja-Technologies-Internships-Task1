@@ -6,11 +6,19 @@ import React,{useState} from 'react';
 
 export default function App()
  {
-
-  function hideHomePage()
+  const [idoftemp, setidoftemp]=useState(null);
+ 
+  function hideHomePage(integer)
   {
+    setidoftemp(integer);
     document.getElementById("home-page").style.display="none";
     document.getElementById("cv-form").style.display="block";
+    showalert("Enter the Form Below !!",'success');
+    
+  }
+  function previewCV()
+  {
+    console.log(idoftemp);
   }
 
   function addNewWEField()
@@ -65,15 +73,11 @@ export default function App()
     else
       {
         setMode("light");
-        document.body.style.backgroundColor='rgb(249, 242, 232)';
+        document.body.style.backgroundColor='rgb(187, 190, 199)';
         showalert("Light Mode is Enabled !!",'success');
       }
   }
 
-  // function previewCV()
-  // {
-
-  // }
 
   // function PrintCVpdf()
   // {
@@ -89,7 +93,7 @@ export default function App()
   <>
     <Navbar mode={mode} toggleMode={toggleMode} />
     <Alert alert={alert} />
-    <Front mode={mode} toggleMode={toggleMode} addNewWEField={addNewWEField} addNewAQField={addNewAQField} hideHomePage={hideHomePage}/>
+    <Front mode={mode} toggleMode={toggleMode} addNewWEField={addNewWEField} addNewAQField={addNewAQField} hideHomePage={hideHomePage} previewCV={previewCV}/>
 
   </>
   );

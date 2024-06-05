@@ -1,11 +1,307 @@
 body{
-    background-color: rgb(249, 242, 232);
+    background-color: rgb(187, 190, 199);
 }
-/* .home-page{
+/* #home-page{
     display: none;
 
-}*/
-
-/* #cv-form{
+}
+#cv-form{
     display: none;
-}  */
+} */
+
+.hidden{
+    display: none;
+}
+
+
+
+/* template 1 style */
+.containertemp1 {
+    width: 630px;
+    margin-bottom: 10px;
+    background-color: white;
+    border: 2px solid black;
+    display: flex;
+    justify-items: start;
+  }
+  .containertemp1 .left hr{
+    border: 1px solid white;
+    margin: 0px;
+  }
+  .containertemp1 .right hr{
+    border: 1px solid black;
+    margin: 0px;
+  }
+  .containertemp1 .left {
+    width: 11rem;
+    background-color: navy;
+   
+  }
+  
+  .containertemp1 .right {
+    margin-left: 5px;
+    width: 25rem;
+    background-color: white;
+  }
+  
+  .containertemp1 .profile{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  .containertemp1 .profile-img {
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    border: 4px solid white;
+  }
+  
+  .containertemp1 .details {
+    margin-top: 30px;
+    padding: 5px;
+    color: white;
+    font-size: smaller;
+    
+  }
+  
+  .containertemp1 .details h2 {
+    margin-bottom: 10px;
+    
+  }
+  .containertemp1 .contacts{
+    margin-top: 50px;
+    margin-bottom: 100px;
+  }
+  .containertemp1 .expertise{
+    margin-top: 10px;
+    margin-bottom: 100px;
+  }
+  .containertemp1 .languages{
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  .containertemp1 .skills{
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  .containertemp1 .hobbies{
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  .containertemp1 .right .name {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .containertemp1 .right .job-title {
+    margin: 1px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .containertemp1 .right .job-title p{
+    margin: 0px;
+  }
+  
+  .containertemp1 .right section h2,h3,h4,h5,h6 {
+    margin-bottom: 1px;
+    margin-top: 1px;
+  }
+  
+  .containertemp1 .references {
+    display: flex;
+    justify-content: space-around;
+  
+  }
+  
+  .containertemp1 .reference-item {
+    width: 20%;
+  }
+
+
+  /* template 2 style */
+  .containertemp2 {
+    background-color: white;
+    width: 550px;
+    margin-bottom: 10px;
+    border: 2px solid black;
+    padding: 20px;
+}
+.containertemp2 .name{
+    text-align: center;
+    
+}
+.containertemp2 .contacts *{
+    margin-right:8px ;
+    display: inline;
+    justify-content: space-around;
+}
+.containertemp2 h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+.containertemp2 p {
+    margin: 0;
+}
+.containertemp2 .topic {
+    margin-top: 20px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    font-size: large;
+    text-align: center;
+}
+.containertemp2 .space{
+    margin-top: 10px;
+}
+.containertemp2 hr {
+    border: 1px solid black;
+    margin: 5px;
+}
+.containertemp2 .skills, .experience, .education, .courses, .interests {
+    margin-bottom: 20px;
+}
+.containertemp2 .interests{
+    display: flex;
+    justify-content: space-between;
+}
+.containertemp2 .interests *{
+    display: inline;
+}
+.containertemp2 .bold{
+    font-size: large;
+    font-weight: 100;
+}
+.containertemp2 .big{
+    font-size: xx-large;
+}
+.containertemp2 .bigger{
+    font-size: large;
+}
+
+
+/* template 3 style */
+.containertemp3 {
+    background-color: white;
+    width:680px;
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif;
+    border: 2px solid black;
+    padding: 20px;
+}
+.containertemp3 .header {
+    height: 100px;
+    display: flex;
+}
+.containertemp3 .left-column {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.containertemp3 .right-column {
+    width: 40%;
+    padding-left: 20px;
+}
+.containertemp3 .contact-details {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.containertemp3 .contact-details li {
+    margin-bottom: 5px;
+}
+.containertemp3 .section {
+    display: flex;
+}
+.containertemp3 .section-left {
+    width: 40%;
+    border-right: 2px solid black;
+    padding-right: 20px;
+}
+.containertemp3 .section-right {
+    width: 60%;
+    padding-left: 20px;
+}
+.containertemp3 .section-heading {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .containertemp3 .education,
+  .skills,
+  .awards,
+  .experience,
+  .projects,
+  .career-objective {
+    margin-bottom: 20px;
+  }
+  .containertemp3  .section-left .education,.skills,.awards{
+    margin-bottom: 100px;
+  }
+
+
+  /* template 4 */
+  .containertemp4 {
+    margin-bottom: 10px;
+    background-color: white;
+    font-family: Arial, sans-serif;
+    width: 570px;
+    border: 2px solid black;
+    padding: 20px;
+}
+.containertemp4 h1 {
+    
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+}
+.containertemp4 h2 {
+    font-size: 18px;
+    margin: 0;
+}
+.containertemp4 h4{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.containertemp4 p {
+    font-size: 14px;
+    margin: 0;
+}
+.containertemp4 hr {
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.containertemp4 .contact-details {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.containertemp4 .contact-details *{
+    margin-top: 5px;
+    margin-left: 2px;
+    display: inline;
+}
+.containertemp4 .education, .experience, .projects{
+    margin-bottom: 20px;
+}
+.containertemp4 .experience,.projects h4{
+    margin-top: 10px;
+}
+.containertemp4 .technical-skills, .languages-known {
+    margin-bottom: 20px;
+}
+.containertemp4 .technical-skills h5{
+    margin: 10px;
+}
+.containertemp4 .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.containertemp4 .row p {
+    margin: 0;
+}
