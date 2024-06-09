@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 export default function Front(props) 
 {
 
+    
     return(
         <>
         <div className="container mt-4" id="home-page" style={{color:props.mode==='dark'?'white':'black',}}>
@@ -57,9 +58,17 @@ export default function Front(props)
                         <li>---Easy to Create---</li>
                         <li>---Have Different Templates---</li>
                         <li>---ATS Friendly---</li>
-                        <li>---Prints your resume in different formats---</li>
+                        <li>---Prints your Resume in Different Formats---</li>
                         <li>---User-Friendly Design---</li>
+                        <li>---Totally Secure---</li>
+                        <li>---No Need To Login or Register---</li>
+                        <li>---Flexible---</li>
                     </ul>
+                </div>
+                <hr></hr><hr></hr>
+                <div className="realtime-clock text-center bottom my-10" id="clock">
+                    <h2>Date & Time<br/></h2>
+                    {props.showtime()}
                 </div>
             </div>
         </div>
@@ -72,107 +81,145 @@ export default function Front(props)
                 <div className="col-md-6">
                         <h3 className=" text-center">Personal Details :</h3><br/>
                     <div className="form-group">
-                        <label htmlFor="nameField">Enter Your Full Name : </label>
+                        <label htmlFor="nameField"><strong>Enter Your Full Name : </strong></label>
                         <input type="text" id="nameField" placeholder="Enter Your Name Here..." className="form-control mb-2"/>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="phonenumberField">Contact Numbers : </label>
+                        <label htmlFor="phonenumberField"><strong>Contact Numbers :</strong> </label>
                         <input type="text" id="phonenumberField" placeholder="Enter Your Contact Numbers..." className="form-control mb-2"/>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="addressField">Address : </label>
+                        <label htmlFor="addressField"><strong>Address : </strong></label>
                         <textarea type="text" id="addressField" placeholder="Enter Your Address Here..." className="form-control mb-2"/>
                     </div>
                     <div className="form-group">
                         {/* <form action="#" method="post" encType="multipart/form-data"> */}
-                            <label>Choose a Profile Image :</label><br/>
-                            <input type="file" id="imageUpload" name="imageUpload"></input>
-                            {/* <input type="submit" value={upload}></input> */}
+                            <label htmlFor="imageUpload"><strong>Choose a Profile Image :</strong></label><br/>
+                            <input type="file" id="imageUpload" accept="image/*" name="imageUpload"></input>
+                            <input type="submit" className="buttoncolour" onClick={props.storeImageurl}></input>
                         {/* </form> */}
                     </div><br/>
-                    <div className="form-group">
-                                <label htmlFor="languageField">Languages Known: </label>
-                                <input type="text" id="languageField" placeholder="Enter Here..." className="form-control mb-2"/>
-                                {/* add the add button */}
+                    <div className="form-group" id="lang">
+                                <label htmlFor=""><strong>Languages Known: </strong></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control langField mb-2"/>
+                                
+                                <div className="container text-center mt-2 mb-3" id="langAddButton">
+                                    <button className="btn btn-primary btn-sm" onClick={props.addNewlangField}>Add More</button>
+                                </div>
                     </div>
-                    <div className="form-group">
-                                <label htmlFor="hobbyField">Interests and Hobbies : </label>
-                                <input type="text" id="hobbyField" placeholder="Enter Here..." className="form-control mb-2"/>
-                                {/* add the add button */}
+                    <div className="form-group" id="hobby">
+                                <label htmlFor=""><strong>Interests and Hobbies :</strong></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control hobbyField mb-2"/>
+
+                                <div className="container text-center mt-2 mb-3" id="hobbyAddButton">
+                                    <button className="btn btn-primary btn-sm" onClick={props.addNewhobbyField}>Add More</button>
+                                </div>
                     </div>
                     <p className="text-secondary my-3">Important Links :</p>
                     
                     <div className="form-group">
-                        <label htmlFor="emailField">E-Mail Address : </label>
+                        <label htmlFor="emailField"> <strong>E-Mail Address : </strong></label>
                         <input type="text" id="emailField" placeholder="Enter Here..." className="form-control mb-2"/>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="githubField">Github :</label>
+                        <label htmlFor="githubField"> <strong>Github : </strong></label>
                         <input type="text" id="githubField" placeholder="Enter Here..." className="form-control mb-2"/>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="linkedField">LinkedIn : </label>
+                        <label htmlFor="linkedField"><strong>LinkedIn :</strong> </label>
                         <input type="text" id="linkedField" placeholder="Enter Here..." className="form-control mb-2"/>
                     </div>
                 </div>
 
                 <div className="col-md-6">
                     <h3  className=" text-center">Professional Details :</h3><br/>
-
                     <div className="form-group">
-                                <label htmlFor="objectiveField">Career Objective/Summary/Profile : </label>
+                                <label htmlFor="jobField"><strong>Job Title :</strong> </label>
+                                <input  id="jobField" type="text" placeholder="Enter Here..." rows="5" className="form-control mb-2"/>
+                    </div>
+                    <div className="form-group">
+                                <label htmlFor="objectiveField"><strong>Career Objective/Summary/Profile :</strong> </label>
                                 <textarea  id="objectiveField" type="text" placeholder="Enter Here..." rows="5" className="form-control mb-2"/>
                     </div>
                     <div className="form-group" id="we">
-                        {/* to add more fiels like session ,job title,responsibilities,.. */}
-                                <label htmlFor="">Work Experience : </label>
-                                <textarea placeholder="Enter Here..." className="form-control weField mb-2"/>
-                
-                                <div className="container text-center mt-2" id="weAddButton">
+                        {/* to add more fields like company-name ,duration,jobtitle,responsibities.. */}
+                                <label htmlFor=""><strong>Work Experience : </strong></label><br/>
+                                
+                                {/* <label><p>Company Name:</p></label> */}
+                                <input type="text" placeholder="Enter Here..." className="form-control weField mb-2"/>
+                                {/* <label><p>Duration of Work:</p></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control weFieldduration mb-2"/>
+                                <label><p>Job Title:</p></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control weFieldjobtitle mb-2"/>
+                                <label><p>Responsibilities:</p></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control weFieldres mb-2"/> */}
+
+                                <div className="container text-center mt-2 mb-3" id="weAddButton">
                                     <button className="btn btn-primary btn-sm" onClick={props.addNewWEField}>Add More</button>
                                 </div>
                     </div>
 
                     <div className="form-group" id="aq">
                         {/* to add more fiels like session ,degree,.. */}
-                                <label htmlFor="">Academic Qualifications/Educational Details : </label>
+                                <label htmlFor=""><strong>Academic Qualifications/Educational Details : </strong></label>
                                 <textarea placeholder="Enter Here..." className="form-control aqField mb-2"/>
                     
-                                <div className="container text-center mt-2 " id="aqAddButton">
+                                <div className="container text-center mt-2 mb-3" id="aqAddButton">
                                     <button className="btn btn-primary btn-sm" onClick={props.addNewAQField}>Add More</button>
                                 </div>
                     </div>
-                    <div className="form-group">
-                                <label htmlFor="expertiseField">Expertise In : </label>
-                                <input type="text" id="expertiseField" placeholder="Enter Here..." className="form-control mb-2"/>
-                                {/* add the add button */}
+            
+                    <div className="form-group" id="expertise">
+                                <label htmlFor=""><strong>Expertise In : </strong></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control expertiseField mb-2"/>
+
+                                <div className="container text-center mt-2 mb-3" id="expertiseAddButton">
+                                    <button className="btn btn-primary btn-sm" onClick={props.addNewexpertiseField}>Add More</button>
+                                </div>
+                                
                     </div>
-                    <div className="form-group">
-                                <label htmlFor="skillsField">Skills : </label>
-                                <input type="text" id="skillsField" placeholder="Enter Here..." className="form-control mb-2"/>
-                                {/* add the add button */}
+                    <div className="form-group" id="skills">
+                                <label htmlFor=""><strong>Skills : </strong></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control skillsField mb-2"/>
+
+                                <div className="container text-center mt-2 mb-3" id="skillsAddButton">
+                                    <button className="btn btn-primary btn-sm" onClick={props.addNewskillsField}>Add More</button>
+                                </div>
+                                
                     </div>
                    
-                    <div className="form-group" id="aq">
+                    <div className="form-group" id="refer">
                         {/* to add more fiels like number ,email,.. */}
-                        <label htmlFor="referenceField">References : </label>
-                                <input type="text" id="referenceField" placeholder="Enter Here..." className="form-control mb-2"/>
-                                {/* add the add button */}
+                        <label htmlFor=""><strong>References : </strong></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control referField mb-2"/>
+                                
+                                <div className="container text-center mt-2 mb-3" id="referAddButton">
+                                    <button className="btn btn-primary btn-sm" onClick={props.addNewreferField}>Add More</button>
+                                </div>
                     </div>
-                    <div className="form-group">
-                                <label htmlFor="certField">Cources and Certificates: </label>
-                                <input type="text" id="certField" placeholder="Enter Here..." className="form-control mb-2"/>
-                                {/* add the add button */}
+                    <div className="form-group" id="cert">
+                                <label htmlFor=""><strong>Cources and Certificates: </strong></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control certField mb-2"/>
+                                
+                                <div className="container text-center mt-2 mb-3" id="certAddButton">
+                                    <button className="btn btn-primary btn-sm" onClick={props.addNewcertField}>Add More</button>
+                                </div>
                     </div>
-                    <div className="form-group">
-                                <label htmlFor="awardsField">Awards and Achievements: </label>
-                                <input type="text" id="awardsField" placeholder="Enter Here..." className="form-control mb-2"/>
-                                {/* add the add button */}
+                    <div className="form-group" id="awards">
+                                <label htmlFor=""><strong>Awards and Achievements: </strong></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control awardsField mb-2"/>
+
+                                <div className="container text-center mt-2 mb-3" id="awardsAddButton">
+                                    <button className="btn btn-primary btn-sm" onClick={props.addNewawardsField}>Add More</button>
+                                </div>
                     </div>
-                    <div className="form-group">
-                                <label htmlFor="projectsField">Projects : </label>
-                                <input type="text" id="projectsField" placeholder="Enter Here..." className="form-control mb-2"/>
-                                {/* add the add button */}
+                    <div className="form-group" id="projects">
+                                <label htmlFor=""><strong>Projects : </strong></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control projectsField mb-2"/>
+                                
+                                <div className="container text-center mt-2 mb-3" id="projectsAddButton">
+                                    <button className="btn btn-primary btn-sm" onClick={props.addNewprojectsField}>Add More</button>
+                                </div>
                     </div>
 
                 
@@ -184,6 +231,17 @@ export default function Front(props)
             <button className="btn btn-primary btn-lg" onClick={props.previewCV}><strong>Preview</strong></button>
           </div>
         </div>
+
+        <div className="hidden text-center my-4" id="lastcomment">
+            <strong>"IF THERE IS EMPTY SPACES IN YOUR FINAL RESUME ,IT IS BECAUSE OF THE IMPROPER AMOUNT OF DETAILS...."</strong>
+        </div>
+
+        <div className="hidden my-7" id="printcv">
+            <button className="btn btn-primary btn-lg ms-5 my-1" onClick={props.PrintCVpdf}><strong>PDF File Download</strong></button>
+            <button className="btn btn-primary btn-lg ms-5 my-1" onClick={props.PrintCVword}><strong>WORD File Download</strong></button>
+            <button className="btn btn-primary btn-lg ms-5 my-1" onClick={props.PrintCVimage}><strong>Image Download</strong></button> 
+        </div>
+
 
         
     </>

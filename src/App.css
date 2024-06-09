@@ -8,16 +8,36 @@ body{
 #cv-form{
     display: none;
 } */
-
-.hidden{
+.buttoncolour{
+  background-color: rgb(250, 136, 136);
+  color: aliceblue;
+}
+/* .buttoncolour:{
+  background-color: rgb(164, 253, 144);
+  color: white;
+} */
+#hidden{
     display: none;
 }
 
+.hidden{
+  display: none;
+}
+.bottom{
+  position: static;
+  bottom: 10px;
+}
+ .containertemp1 , .containertemp2 , .containertemp3 , .containertemp4{
+  margin-left: 20%;
+ }
+ #lastcomment{
+  color: white;
+ }
 
 
 /* template 1 style */
 .containertemp1 {
-    width: 630px;
+    width: 650px;
     margin-bottom: 10px;
     background-color: white;
     border: 2px solid black;
@@ -33,14 +53,15 @@ body{
     margin: 0px;
   }
   .containertemp1 .left {
-    width: 11rem;
+    width: 14rem;
+    margin-right: 2px;
     background-color: navy;
    
   }
   
   .containertemp1 .right {
     margin-left: 5px;
-    width: 25rem;
+    width: 35rem;
     background-color: white;
   }
   

@@ -16,119 +16,114 @@
   </head>
   <body>
      <div id="root"> </div>
+     <div> 
+       <br/>
+     </div>
 
     <!-- have to add printcv option -->
     <!-- have to give every element a unique id to link it to the section -->
      <!-- template 1 -->
-     <div class="hidden">
-      <div class="containertemp1">
+      <div class="containertemp1" id="hidden">
       <div class="left">
         <div class="profile">
-          <img src="profile picture.jpg" alt="Profile Image" class="profile-img">
+          <img id="imageUploadt1" src="" alt="Profile Image" class="profile-img">
         </div>
         <div class="details">
           <div class="contacts">
           <h2>Contact</h2><hr>
           <ul>
-            <li id="emailid">Email:example@example.com</li>
-            <li id="github">Github:www.github.com</li>
-            <li id="phonenumber">Phone:123-456-7890</li>
-            <li id="address">Address:123 Main St, City</li>
+            <li id="emailt1"></li>
+            <li id="githubt1"></li>
+            <li id="phonenumbert1"></li>
+            <li id="addresst1"></li>
           </ul>
           </div>
           <div class="expertise">
-          <h2>Expertise :</h2><hr>
-          <ul>
-            <!-- add the add button -->
-            <li>Web Development</li>
+          <h2>Expertise</h2><hr>
+          <ul id="expt1">
+            <li></li>
           </ul>
           </div>
           
           <div class="skills">
             <h2>Other Skills</h2><hr>
-            <ul>
-               <!-- add the add button -->
-              <li>Graphic Design</li>
+            <ul id="skillt1">
+              <li></li>
             </ul>
           </div>
           <div>
           <h2 class="languages">Languages</h2><hr>
-          <ul>
-            <!-- add the add button -->
-            <li>English</li>
+          <ul id="langt1">
+            <li></li>
           </ul>
           </div>
           <div class="hobbies">
             <h2>Hobbies</h2><hr>
-            <ul>
-            <!-- add the add button -->
-              <li>Web Development</li>
+            <ul id="hobbyt1">
+              <li></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="right">
-        <h1 class="name">Asmita Kumari</h1>
-        <p class="job-title">Job Title<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam architecto magnam accusamus cumque excepturi? Vero doloribus ipsam numquam eum, eos deserunt hic esse voluptas recusandae animi nihil eveniet blanditiis, eaque aliquam et commodi possimus quis alias unde optio voluptates? Iste.</p></p>
-        
+        <h1 class="name" id="namet1"></h1>
+        <p class="job-title" id="jobt1"></p>
+        <p id="objt1"></p>
         <hr>
         <section class="experience">
           <h2>Experience</h2>
-          <ul>
-            <!-- add the add button -->
-            <li><h6>Year</h6><h5>Company Name</h5><h4>Job Title</h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, porro.</li>
+          <ul id="wet1">
+            <li><h6>Year</h6><h5>Company Name</h5><h4>Job Title</h4>Lorem ipsum</li>
           </ul>
         </section>
         <hr>
         <section class="education">
           <h2>Academic Qualifications</h2>
-          <ul>
-            <!-- add the add button -->
-            <li><h6>Session</h6><h5>Degree Name</h5><h4>School\College Name</h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, porro.</li>
+          <ul id="aqt1">
+            <li><h6>Session</h6><h5>Degree Name</h5><h4>School\College Name</h4>Lorem ipsum</li>
           </ul>
         </section>
         <hr>
         <section class="reference">
           <h2>Reference</h2>
-            <!-- add the add button -->
           <div class="references">
-            <div class="reference-item">
-              <p>Name: John Doe</p>
-              <p>Contact: john@example.com</p>
-              <p>Company: XYZ Corp</p>
-              <p>Title: Manager</p>
+            <div class="reference-item" id="refert1">
+              <p>Name:</p>
+              <p>Contact:</p>
+              <p>Company:</p>
+              <p>Title:</p>
             </div>
           </div>
         </section>
       </div>
     </div>
-    </div>
+
 
     <!-- template 2 -->
-    <div class="containertemp2  hidden">
+    <div id="hidden" class="containertemp2 ">
       <div class="name">
-          <h1 class="big">Name Surname</h1>
-          <p class="bigger">Job Title</p>
-          <p>Phone: 123-456-7890</p>
+          <h1 class="big" id="namet2"></h1>
+          <p class="bigger" id="jobt2"></p>
+          <p id="phonenumbert2"></p>
           <div class="contacts">
-              <p>example@example.com</p>
-              <p>linkedin.com/in/example</p>
-              <p>github.com/example</p>
+              <p id="emailt2"></p>
+              <p id="linkedt2"></p>
+              <p id="githubt2"></p>
           </div>
       </div>
       <div class="topic">Summary</div>
       <hr>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p id="objt2"></p>
       <div class="topic">Skills</div>
       <hr>
-      <ul class="skills">
-          <li>Skill 1</li>
+      <ul class="skills" id="skillt2">
+          <li></li>
       </ul>
       <div class="topic">Experience</div>
       <hr>
-      <ul class="experience">
+      <ul class="experience" id="wet2">
           <li>
-              <p>Company 1</p>
+              <p>Company</p>
               <p class="bold">Job Title</p>
               <ul type="none">
                   <li>-Responsibility 1</li>
@@ -139,7 +134,7 @@
       </ul>
       <div class="topic">Education</div>
       <hr>
-      <ul class="education">
+      <ul class="education" id="aqt2">
       
           <li  class="space">
               <p>College/School Name</p>
@@ -148,35 +143,30 @@
       </ul>
       <div class="topic">Courses and Certificates</div>
       <hr>
-      <ul class="courses">
-          <li>Course 1</li>
-          <li>Course 2</li>
-          <li>Course 3</li>
+      <ul class="courses" id="certt2">
+          <li></li>
       </ul>
       <div class="topic">Interests and Hobbies</div>
       <hr>
-      <ul class=" interests">
-          <li>Interest 1</li>
-          <li>Interest 2</li>
-          <li>Interest 3</li>
-          <li>Interest 4</li>
+      <ul class=" interests"  id="hobbyt2">
+          <li></li>
       </ul>
   </div>
 
 
   <!-- template 3 -->
-  <div class="containertemp3  hidden">
+  <div id="hidden" class="containertemp3">
     <div class="header">
         <div class="left-column">
-            <h1 style="margin-bottom: 10px; margin-top: 5px;">Name</h1>
-            <h3 style="margin-top: 0px;">Job Position</h3>
+            <h1 id="namet3" style="margin-bottom: 10px; margin-top: 5px;"></h1>
+            <h3 style="margin-top: 0px;" id="jobt3"></h3>
         </div>
         <div class="right-column">
             <ul class="contact-details">
-                <li>Phone Number</li>
-                <li>Email Address</li>
-                <li>Location</li>
-                <li>LinkedIn</li>
+                <li id="emailt3"></li>
+                <li id="addresst3"></li>
+                <li id="linkedt3"></li>
+                <li id="githubt3"></li>
             </ul>
         </div>
     </div>
@@ -185,26 +175,26 @@
         <div class="section-left">
             <div class="education">
                 <h2 class="section-heading">Education</h2>
-                <ul>
+                <ul id="aqt3">
                     <li>Name of College/School</li>
-                    <li>Degree</li>
+                    <p>Degree</p>
                 </ul>
                 <ul>
                     <li>Name of College/School</li>
-                    <li>Degree</li>
+                    <p>Degree</p>
                 </ul>
             </div>
 
             <div class="skills">
                 <h2 class="section-heading">Skills</h2>
-                <ul>
-                    <li>Skill 1</li>
+                <ul id="skillt3">
+                    <li></li>
                 </ul>
             </div>
             <div class="awards">
                 <h2 class="section-heading">Awards</h2>
-                <ul>
-                    <li>Award 1</li>
+                <ul id="awardst3">
+                    <li></li>
                 </ul>
             </div>
         </div>
@@ -212,33 +202,29 @@
         <div class="section-right">
             <div class="career-objective">
                 <h2 class="section-heading">Career Objectives</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis feugiat quam. Fusce non tempor velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec non sodales lectus.</p>
+                <p id="objt3"></p>
             </div>
             <div class="experience">
                         <h2 class="section-heading">Experience</h2>
-                        <ul class="experience-list">
+                        <ul class="experience-list" id="wet3">
                         <li>
                             <h3>Company Name</h3>
                             <p>Year of Service</p>
                             <p>Job Position</p>
                             <ul>
                             <li>Detail 1</li>
-                            <li>Detail 2</li>
-                            <li>Detail 3</li>
                             </ul>
                         </li>
                         </ul>
                     </div>
                     <div class="projects">
                         <h2 class="section-heading">Projects</h2>
-                        <ul class="projects-list">
+                        <ul class="projects-list" id="projectst3">
                         <li>
                             <h3>Project Name</h3>
                             <p>Duration</p>
                             <ul>
                             <li>Detail 1</li>
-                            <li>Detail 2</li>
-                            <li>Detail 3</li>
                             </ul>
                         </li>
                         </ul>
@@ -248,24 +234,24 @@
 </div>
 
 <!-- template 4 -->
-<div class="containertemp4  hidden">
+<div id="hidden" class="containertemp4">
   <div class="header">
-      <h1 style="margin-bottom: 9px;">John Doe</h1>
-      <h2>Software Engineer</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+      <h1  id="namet4" style="margin-bottom: 9px;"></h1>
+      <h2 id="jobt4"></h2>
+      <p id="objt4"></p>
   </div>
   <hr>
   <div class="contact-details">
-      <p>123-456-7890</p>
-      <p>linkedin.com/in/johndoe</p>
-      <p>github.com/johndoe</p>
-      <p>john.doe@example.com</p>
+      <p id="phonenumbert4"></p>
+      <p id="linkedt4"></p>
+      <p id="githubt4"></p>
+      <p id="emailt4"></p>
   </div>
   <hr>
   <div class="education">
       <h2>EDUCATION</h2>
       <div class="row">
-          <div class="column">
+          <div class="column" id="aqt4">
               <h4>College/University Name</h4>
               <p>Degree Name</p>
               <p>Session</p>
@@ -276,7 +262,7 @@
   <div class="experience">
       <h2>EXPERIENCE</h2>
       
-      <ul>
+      <ul id="wet4">
           <li>
               <h4>Company Name</h4>
               <p>Session</p>
@@ -288,32 +274,30 @@
   <div class="projects">
       <h2>PROJECTS</h2>
       
-      <ul>
+      <ul id="projectst4">
           <li>
               <h4>Project 1</h4>
               <p>Duration</p>
               <p>Technologies Used</p>
-              <p>About Project Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima dolor facilis earum accusantium ex quis dolorem sunt inventore facere architecto?</p>
+              <p>About Project?</p>
           </li>
       </ul>
   </div>
   <div class="technical-skills">
       <h2>TECHNICAL SKILLS</h2>
       
-      <div class="row">
+      <div class="row" id="skillt4">
           <h5>Technical Skill 1</h5>
           <p>Description</p>
       </div>
   </div>
   <div class="languages-known">
-      <h2>LANGUAGES</h2>
-      
-      <div class="row">
-          <p>Language 1</p>
+      <h2>LANGUAGES</h2>  
+      <div class="row" id="langt4">
+          <p></p>
       </div>
   </div>
 </div>
-
 
 
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
