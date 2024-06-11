@@ -1,4 +1,3 @@
-import html2canvas from 'html2canvas';
 import './App.css';
 import Alert from './Components/Alert';
 import Front from './Components/Front';
@@ -8,6 +7,11 @@ import React,{useState} from 'react';
 export default function App()
  {
   const [idoftemp, setidoftemp]=useState(null);
+  
+  const[countweadd,setcountweadd]=useState(0);
+  const[countreferadd,setcountreferadd]=useState(0);
+  const[countaqadd,setcountaqadd]=useState(0);
+  const[countpadd,setcountpadd]=useState(0);
 
   function hideHomePage(integer)
   {
@@ -17,34 +21,73 @@ export default function App()
     showalert("Enter the Form Below !!",'success');
     window.alert("Do not Refresh this page at any time ,it can lead to loss of all your data");
   }
-  
+
+  let addweobj=document.getElementById("we");
+  let weaddbtn=document.getElementById("weAddButton");
   function addNewWEField()
   {
-    let addwe=document.createElement("input");
-    addwe.classList.add("form-control");
-    addwe.classList.add("weField");
-    addwe.classList.add("mb-2");
-    addwe.setAttribute("placeholder","Enter Here...");
-    addwe.setAttribute("type","text");
-
-    let addweobj=document.getElementById("we");
-    let weaddbtn=document.getElementById("weAddButton");
+    const head=document.createElement('div');
+    let addwe=addweobj.appendChild(head);
+    head.innerHTML=('<div id="weinput"><label for=""><strong>Work Experience : </strong></label><br/><label><p>Company Name:</p></label><input type="text" placeholder="Enter Here..." class="form-control weFieldcompany mb-2"/><label><p>Year of Service:</p></label><input type="text" placeholder="Enter Here..." class="form-control weFieldyear mb-2"/><label><p>Job Title:</p></label><input type="text" placeholder="Enter Here..." class="form-control weFieldjobtitle mb-2"/><label><p>Responsibilities/Detail/About Job:</p></label><input type="text" placeholder="Enter Here..." class="form-control weFieldabout mb-2"/></div>');
     addweobj.insertBefore(addwe,weaddbtn);
-
-    // let parentwediv=document.getElementById("we");
-    // let childElementsofwe=[];
-    // for(let i=0;i<parentwediv.children.length;i++)
-    //   {
-    //     childElementsofwe.push(parentwediv.children[i]);
-    //   }
-    // let newwediv=document.createElement('div');
-    // childElementsofwe.forEach(function(childElement){
-    //   newwediv.appendChild(childElement);
-    // });
-    // parentwediv.insertBefore(newwediv,parentwediv.lastChild);
-
+    setcountweadd((countweadd+1));
+    if(countweadd>5)
+      {
+        showalert("Limit of adding fields is limited","danger");
+      }
   }
+    
+  
+  let addreferobj=document.getElementById("refer");
+    let referaddbtn=document.getElementById("referAddButton"); 
+  function addNewreferField()
+  {
+    const head=document.createElement('div');
+    let addrefer=addreferobj.appendChild(head);
+    head.innerHTML=('<div id="referinput"><label><strong>References : </strong></label><br/><label><p>Name:</p></label><input type="text" placeholder="Enter Here..." class="form-control referFieldname mb-2"/><label><p>Company Name:</p></label><input type="text" placeholder="Enter Here..." class="form-control referFieldcompany mb-2"/><label><p>Job Title:</p></label> <input type="text" placeholder="Enter Here..." class="form-control referFieldjobt mb-2"/><label><p>Contact -may be email,number:</p></label><input type="text" placeholder="Enter Here..." class="form-control referFieldcontacts mb-2"/></div>');
+    addreferobj.insertBefore(addrefer,referaddbtn);
+    setcountreferadd((countreferadd+1));
+    if(countreferadd>5)
+      {
+        showalert("Limit of adding fields is limited","danger");
+      }
+  }
+  
 
+  let addaqobj=document.getElementById("aq");
+  let aqaddbtn=document.getElementById("aqAddButton");
+  function addNewAQField()
+    {
+      const head=document.createElement('div');
+      let addaq=addaqobj.appendChild(head);
+      head.innerHTML=(`<div id="aqinput"><label><strong>Academic Qualifications/Educational Details : </strong></label><br/><label><p>Session/Year:</p></label><input type="text" placeholder="Enter Here..." class="form-control aqFieldyear mb-2"/><label><p>Degree Name:</p></label><br/><input type="text" placeholder="Enter Here..." class="form-control aqFielddeg mb-2"/><label><p>School/College Name:</p></label><input type="text" placeholder="Enter Here..." class="form-control weFieldscname mb-2"/><label><p>Detail -may be about cgpa/sgpa/percentage/marks:</p></label><br/> <input type="text" placeholder="Enter Here..." class="form-control weFieldabout mb-2"/></div>`);                  
+      addaqobj.insertBefore(addaq,aqaddbtn);
+      setcountaqadd((countaqadd+1));
+      if(countaqadd>5)
+        {
+          showalert("Limit of adding fields is limited","danger");
+        }
+    }
+
+
+  let addprojectsobj=document.getElementById("projects");
+    let projectsaddbtn=document.getElementById("projectsAddButton");
+  function addNewprojectsField()
+  {
+    const head=document.createElement('div');
+    let addprojects=addaqobj.appendChild(head);
+    head.innerHTML=('<div id="projectsinput"><label><strong>Projects : </strong></label><br/><label><p> Project Name:</p></label><input type="text" placeholder="Enter Here..." class="form-control projectsFieldname mb-2"/><label><p>Duration:</p></label><input type="text" placeholder="Enter Here..." class="form-control projectsFielddur mb-2"/> <label><p>Tech-Stack Used:</p></label><input type="text" placeholder="Enter Here..." class="form-control projectsFieldtech mb-2"/><label><p>Detail/Summary/About</p></label><input type="text" placeholder="Enter Here..." class="form-control projectsFieldabout mb-2"/></div>');
+    addprojectsobj.insertBefore(addprojects,projectsaddbtn);
+    setcountpadd((countpadd+1));
+      if(countpadd>5)
+        {
+          showalert("Limit of adding fields is limited","danger");
+        }
+  }
+  
+
+   
+  
   function addNewlangField()
   {
     let addlang=document.createElement("input");
@@ -89,20 +132,7 @@ export default function App()
     let skillsaddbtn=document.getElementById("skillsAddButton");
     addskillsobj.insertBefore(addskills,skillsaddbtn);
   }
-  function addNewreferField()
-  {
-    let addrefer=document.createElement("input");
-    addrefer.setAttribute('type','text');
-    addrefer.classList.add("form-control");
-    addrefer.classList.add("referField");
-    addrefer.classList.add("mb-2");
-    
-    addrefer.setAttribute("placeholder","Enter Here...");
-
-    let addreferobj=document.getElementById("refer");
-    let referaddbtn=document.getElementById("referAddButton");
-    addreferobj.insertBefore(addrefer,referaddbtn);
-  }
+  
   function addNewcertField()
   {
     let addcert=document.createElement("input");
@@ -131,21 +161,7 @@ export default function App()
     let awardsaddbtn=document.getElementById("awardsAddButton");
     addawardsobj.insertBefore(addawards,awardsaddbtn);
   }
-  function addNewprojectsField()
-  {
-    let addprojects=document.createElement("input");
-    addprojects.setAttribute('type','text');
-    addprojects.classList.add("form-control");
-    addprojects.classList.add("projectsField");
-    addprojects.classList.add("mb-2");
-    
-    addprojects.setAttribute("placeholder","Enter Here...");
-
-    let addprojectsobj=document.getElementById("projects");
-    let projectsaddbtn=document.getElementById("projectsAddButton");
-    addprojectsobj.insertBefore(addprojects,projectsaddbtn);
-  }
-  
+ 
 
   function addNewexpertiseField()
   {
@@ -162,19 +178,7 @@ export default function App()
     addexpertiseobj.insertBefore(addexpertise,expertiseaddbtn);
 
   }
- function addNewAQField()
-    {
-      let addaq=document.createElement("textarea");
-      addaq.classList.add("form-control");
-      addaq.classList.add("weField");
-      addaq.classList.add("mb-2");
-      addaq.setAttribute("placeholder","Enter Here...");
-  
-      
-      let addaqobj=document.getElementById("aq");
-      let aqaddbtn=document.getElementById("aqAddButton");
-      addaqobj.insertBefore(addaq,aqaddbtn);
-    }
+
 
   let [mode,setMode]=useState("light");
   let [alert,setAlert]=useState(null);
@@ -232,25 +236,11 @@ function storeImageurl()
       btn1.style.backgroundColor='rgb(164, 253, 144)';
       btn1.style.color='white';
     }
-    else{
+    if(!file){
       showalert("NO IMAGE SELECTED","danger");
     }
 }
 
-
-// let nameField1 = document.querySelector("#nameField").value; // Retrieve nameField1 outside the loop
-// let tempcheck = document.getElementsByClassName(tempclass);
-// for (let i = 0; i < tempcheck.length; i++) {
-//     // for name
-//     let nameall = "namet" + idoftemp; // Assuming idoftemp is defined somewhere
-//     let names = tempcheck[i].querySelector("#" + nameall); // Using querySelector to find elements by ID
-
-//     if (names) {
-//         names.innerHTML = nameField1; // Set innerHTML directly
-//     } else {
-//         console.log("NO ELEMENT FOUND HAVING ID " + nameall);
-//     }
-// }
 
 var tempclass="containertemp"+idoftemp;
 
@@ -268,16 +258,36 @@ var tempclass="containertemp"+idoftemp;
     let emailField1=document.querySelector("#emailField").value;
     let githubField1=document.querySelector("#githubField").value;
     let linkedField1=document.getElementById("linkedField").value;
-    let weField1=document.getElementsByClassName("weField");
     let jobField1=document.querySelector("#jobField").value;
     let objectiveField1=document.querySelector("#objectiveField").value;
-    let aqField1=document.getElementsByClassName("aqField");
     let expertiseField1=document.getElementsByClassName("expertiseField");
     let skillsField1=document.getElementsByClassName("skillsField");
-    let referField1=document.getElementsByClassName("referField");
     let certField1=document.getElementsByClassName("certField");
     let awardsField1=document.getElementsByClassName("awardsField");
-    let projectsField1=document.getElementsByClassName("projectsField");
+
+    // work experience fields
+    let weFieldcom=document.getElementsByClassName("weFieldcompany");
+    let weFieldy=document.getElementsByClassName("weFieldyear");
+    let weFieldjt=document.getElementsByClassName("weFieldjobtitle");
+    let weFieldabt=document.getElementsByClassName("weFieldabout");
+
+    // education fields
+    let aqFieldy=document.getElementsByClassName("aqFieldyear");
+    let aqFieldd=document.getElementsByClassName("aqFielddeg");
+    let aqFieldsc=document.getElementsByClassName("aqFieldscname");
+    let aqFieldabt=document.getElementsByClassName("aqFieldabout");
+
+    // reference fields
+    let rFieldn=document.getElementsByClassName("referFieldname");
+    let rFieldcom=document.getElementsByClassName("referFieldcompany");
+    let rFieldjt=document.getElementsByClassName("referFieldjobt");
+    let rFieldct=document.getElementsByClassName("referFieldcontacts");
+   
+        // projects fields
+        let pFieldn=document.getElementsByClassName("projectsFieldname");
+        let pFielddur=document.getElementsByClassName("projectsFielddur");
+        let pFieldt=document.getElementsByClassName("projectsFieldtech");
+        let pFieldabt=document.getElementsByClassName("projectsFieldabout");
 
   for(var i=0;i<tempcheck.length;i++)     //tempcheck.item.length
     {
@@ -334,9 +344,9 @@ var tempclass="containertemp"+idoftemp;
       imagess.src=imageurl;
     }
     else{
+     
       console.log("NO ELEMENT FOUND HAVING ID "+imageall);
     }
-
     //for language
   //   let langField1=document.getElementsByClassName("langField");
   //   var strlang="";
@@ -423,24 +433,120 @@ var tempclass="containertemp"+idoftemp;
   }
 
 /////////////////////////////////////////////////professional details////////////////////////////////////////////////////////////////////////
-  
 
-  //for work experience
+ 
+    let lis="<li>"; let lie="</li>";
+    let h4s="<h4>";let h4e="</h4>";
+    let h5s="<h5>";let h5e="</h5>";
+    let h6s="<h6>";let h6e="</h6>";
+    let ps="<p>--";let pe="</p>";
+
+  //for work experience   
 var weall="#wet"+idoftemp;
 var wes=tempcheck[i].querySelector(weall);
 if(wes)
-   {
-  
-  var strwe="";
-  for(let e of weField1)
-    {
-      strwe=strwe+`<li> ${e.value} </li>`;
+  {
+    var strwe="";
+    let arrayswe=[weFieldcom,weFieldy,weFieldjt,weFieldabt];
+
+    for(let i=0; i<countweadd;i++)
+    { 
+      for(let j=0;j<4;j++)
+        {
+          
+              if(arrayswe[j][i]!==undefined)
+                {
+                  strwe=strwe+(j===0?(lis+h4s+arrayswe[j][i].value+h4e):j===1?(h5s+arrayswe[j][i].value+h5e):j===2?(h6s+arrayswe[j][i].value+h6e):(ps+arrayswe[j][i].value+pe+lie));
+                }
+            
+        }
     }
-  wes.innerHTML=strwe;
+    wes.innerHTML=strwe;
+
    }
+
    else{
      console.log("NO ELEMENT FOUND HAVING ID "+weall);
     }
+
+  //for education
+  var aqall="#aqt"+idoftemp;
+var aqs=tempcheck[i].querySelector(aqall);
+if(aqs)
+   {
+  var straq="";
+  let arraysaq=[aqFieldy,aqFieldd,aqFieldsc,aqFieldabt];
+
+  for(let i=0; i<countaqadd;i++)
+    { 
+      for(let j=0;j<4;j++)
+        {
+          
+              if(arraysaq[j][i]!==undefined)
+                {
+                  straq=straq+(j===0?(lis+h4s+arraysaq[j][i].value+h4e):j===1?(h5s+arraysaq[j][i].value+h5e):j===2?(h6s+arraysaq[j][i].value+h6e):(ps+arraysaq[j][i].value+pe+lie));
+                }
+            
+        }
+    }
+  
+aqs.innerHTML=straq;
+   }
+   else{
+     console.log("NO ELEMENT FOUND HAVING ID "+aqall);
+    }
+    
+    //for reference
+ var referall="#refert"+idoftemp;
+ var refers=tempcheck[i].querySelector(referall);
+  if(refers)
+     {
+  var strrefer="";
+  let arraysrefer=[rFieldn,rFieldcom,rFieldjt,rFieldct];
+
+  for(let i=0; i<countreferadd;i++)
+    { 
+      for(let j=0;j<4;j++)
+        {
+          
+              if(arraysrefer[j][i]!==undefined)
+                {
+                  strrefer=strrefer+(j===0?(lis+h4s+arraysrefer[j][i].value+h4e):j===1?(h5s+arraysrefer[j][i].value+h5e):j===2?(h6s+arraysrefer[j][i].value+h6e):(ps+arraysrefer[j][i].value+pe+lie));
+                }
+            
+        }
+    }
+refers.innerHTML=strrefer;
+}
+else{
+  console.log("NO ELEMENT FOUND HAVING ID "+referall);
+ } 
+
+  //for projects
+  var projectsall="#projectst"+idoftemp;
+  var projectss=tempcheck[i].querySelector(projectsall);
+    if(projectss)
+       {
+  var strprojects="";
+  let arraysp=[pFieldn,pFielddur,pFieldt,pFieldabt];
+
+  for(let i=0; i<countreferadd;i++)
+    { 
+      for(let j=0;j<4;j++)
+        {
+          
+              if(arraysp[j][i]!==undefined)
+                {
+                  strprojects=strprojects+(j===0?(lis+h4s+arraysp[j][i].value+h4e):j===1?(h5s+arraysp[j][i].value+h5e):j===2?(h6s+arraysp[j][i].value+h6e):(ps+arraysp[j][i].value+pe+lie));
+                }
+            
+        }
+    }
+projectss.innerHTML=strprojects;
+}
+else{
+  console.log("NO ELEMENT FOUND HAVING ID "+projectsall);
+ }
 
       //for job position
       // var joball="#jobt"+idoftemp;
@@ -470,21 +576,7 @@ if(wes)
         console.log("NO ELEMENT FOUND HAVING ID "+objall);
       }
 
-  //for education
-  var aqall="#aqt"+idoftemp;
-var aqs=tempcheck[i].querySelector(aqall);
-if(aqs)
-   {
-  var straq="";
-  for(let e of aqField1)
-    {
-      straq=straq+`<li> ${e.value} </li>`;
-    } 
-aqs.innerHTML=straq;
-   }
-   else{
-     console.log("NO ELEMENT FOUND HAVING ID "+aqall);
-    }
+
 
   //for expertise
   var expall="#expt"+idoftemp;
@@ -518,21 +610,7 @@ else{
   console.log("NO ELEMENT FOUND HAVING ID "+skillall);
  }
  
- //for reference
- var referall="#refert"+idoftemp;
- var refers=tempcheck[i].querySelector(referall);
-  if(refers)
-     {
-  var strrefer="";
-  for(let e of referField1)
-    {
-      strrefer=strrefer+`<li> ${e.value} </li>`;
-    }
-refers.innerHTML=strrefer;
-}
-else{
-  console.log("NO ELEMENT FOUND HAVING ID "+referall);
- }
+
  
   //for certificates
     var certall="#certt"+idoftemp;
@@ -565,22 +643,7 @@ awardss.innerHTML=strawards;
 else{
   console.log("NO ELEMENT FOUND HAVING ID "+awardsall);
  }
- 
-  //for projects
-  var projectsall="#projectst"+idoftemp;
-  var projectss=tempcheck[i].querySelector(projectsall);
-    if(projectss)
-       {
-  var strprojects="";
-  for(let e of projectsField1)
-    {
-      strprojects=strprojects+`<li> ${e.value} </li>`;
-    }
-projectss.innerHTML=strprojects;
-}
-else{
-  console.log("NO ELEMENT FOUND HAVING ID "+projectsall);
- }
+
 
 }
 
@@ -600,7 +663,8 @@ else{
     
   }
 
- const element = document.getElementsByClassName(tempclass);
+ 
+  
  
   function PrintCVpdf()
   {
@@ -616,9 +680,6 @@ else{
   {
     console.log("printed in image");
   }
-
-
-
 
   return (
   <>

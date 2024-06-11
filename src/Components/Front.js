@@ -142,28 +142,35 @@ export default function Front(props)
                                 <textarea  id="objectiveField" type="text" placeholder="Enter Here..." rows="5" className="form-control mb-2"/>
                     </div>
                     <div className="form-group" id="we">
-                        {/* to add more fields like company-name ,duration,jobtitle,responsibities.. */}
+                        <div id="weinput">
                                 <label htmlFor=""><strong>Work Experience : </strong></label><br/>
                                 
-                                {/* <label><p>Company Name:</p></label> */}
-                                <input type="text" placeholder="Enter Here..." className="form-control weField mb-2"/>
-                                {/* <label><p>Duration of Work:</p></label>
-                                <input type="text" placeholder="Enter Here..." className="form-control weFieldduration mb-2"/>
+                                <label><p>Company Name:</p></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control weFieldcompany mb-2"/>
+                                <label><p>Year of Service:</p></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control weFieldyear mb-2"/>
                                 <label><p>Job Title:</p></label>
                                 <input type="text" placeholder="Enter Here..." className="form-control weFieldjobtitle mb-2"/>
-                                <label><p>Responsibilities:</p></label>
-                                <input type="text" placeholder="Enter Here..." className="form-control weFieldres mb-2"/> */}
-
+                                <label><p>Responsibilities/Detail/About Job:</p></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control weFieldabout mb-2"/>
+                        </div>
                                 <div className="container text-center mt-2 mb-3" id="weAddButton">
                                     <button className="btn btn-primary btn-sm" onClick={props.addNewWEField}>Add More</button>
                                 </div>
                     </div>
 
                     <div className="form-group" id="aq">
-                        {/* to add more fiels like session ,degree,.. */}
-                                <label htmlFor=""><strong>Academic Qualifications/Educational Details : </strong></label>
-                                <textarea placeholder="Enter Here..." className="form-control aqField mb-2"/>
-                    
+                        <div id="aqinput">
+                                <label htmlFor=""><strong>Academic Qualifications/Educational Details : </strong></label><br/>
+                                <label><p>Degree Name:</p></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control aqFielddeg mb-2"/>
+                                <label><p>Session/Year:</p></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control aqFieldyear mb-2"/>
+                                <label><p>School/College Name:</p></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control aqFieldscname mb-2"/>
+                                <label><p>Detail -may be about cgpa/sgpa/percentage/marks:</p></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control aqFieldabout mb-2"/>
+                        </div>
                                 <div className="container text-center mt-2 mb-3" id="aqAddButton">
                                     <button className="btn btn-primary btn-sm" onClick={props.addNewAQField}>Add More</button>
                                 </div>
@@ -189,10 +196,18 @@ export default function Front(props)
                     </div>
                    
                     <div className="form-group" id="refer">
-                        {/* to add more fiels like number ,email,.. */}
-                        <label htmlFor=""><strong>References : </strong></label>
-                                <input type="text" placeholder="Enter Here..." className="form-control referField mb-2"/>
-                                
+                        <div id="referinput">
+                                <label htmlFor=""><strong>References : </strong></label><br/>
+
+                                <label><p>Name:</p></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control referFieldname mb-2"/>
+                                <label><p>Company Name:</p></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control referFieldcompany mb-2"/>
+                                <label><p>Job Title:</p></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control referFieldjobt mb-2"/>
+                                <label><p>Contact -may be email,number:</p></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control referFieldcontacts mb-2"/>
+                        </div>
                                 <div className="container text-center mt-2 mb-3" id="referAddButton">
                                     <button className="btn btn-primary btn-sm" onClick={props.addNewreferField}>Add More</button>
                                 </div>
@@ -214,9 +229,18 @@ export default function Front(props)
                                 </div>
                     </div>
                     <div className="form-group" id="projects">
-                                <label htmlFor=""><strong>Projects : </strong></label>
-                                <input type="text" placeholder="Enter Here..." className="form-control projectsField mb-2"/>
-                                
+                        <div id="projectsinput">
+                                <label htmlFor=""><strong>Projects : </strong></label><br/>
+
+                                <label><p> Project Name:</p></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control projectsFieldname mb-2"/>
+                                <label><p>Duration:</p></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control projectsFielddur mb-2"/>
+                                <label><p>Tech-Stack Used:</p></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control projectsFieldtech mb-2"/>
+                                <label><p>Detail/Summary/About</p></label>
+                                <input type="text" placeholder="Enter Here..." className="form-control projectsFieldabout mb-2"/>
+                        </div>        
                                 <div className="container text-center mt-2 mb-3" id="projectsAddButton">
                                     <button className="btn btn-primary btn-sm" onClick={props.addNewprojectsField}>Add More</button>
                                 </div>
