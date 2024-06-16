@@ -261,9 +261,9 @@ export default function Front(props)
         </div>
 
         <div className="hidden my-7" id="printcv">
-            <button className="btn btn-primary btn-lg ms-5 my-1" onClick={props.PrintCVpdf}><strong>PDF File Download</strong></button>
-            <button className="btn btn-primary btn-lg ms-5 my-1" onClick={props.PrintCVword}><strong>WORD File Download</strong></button>
-            <button className="btn btn-primary btn-lg ms-5 my-1" onClick={props.PrintCVimage}><strong>Image Download</strong></button> 
+            <button className="btn btn-primary btn-lg my-1" onClick={props.PrintCVpdf}><strong>Download</strong></button>
+            {/* <button className="btn btn-primary btn-lg ms-5 my-1" onClick={props.PrintCVword}><strong>WORD File Download</strong></button>
+            <button className="btn btn-primary btn-lg ms-5 my-1" onClick={props.PrintCVimage}><strong>Image Download</strong></button>  */}
         </div>
 
 

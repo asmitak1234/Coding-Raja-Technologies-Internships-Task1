@@ -8,10 +8,10 @@ export default function App()
  {
   const [idoftemp, setidoftemp]=useState(null);
   
-  const[countweadd,setcountweadd]=useState(0);
-  const[countreferadd,setcountreferadd]=useState(0);
-  const[countaqadd,setcountaqadd]=useState(0);
-  const[countpadd,setcountpadd]=useState(0);
+  const[countweadd,setcountweadd]=useState(1);
+  const[countreferadd,setcountreferadd]=useState(1);
+  const[countaqadd,setcountaqadd]=useState(1);
+  const[countpadd,setcountpadd]=useState(1);
 
   function hideHomePage(integer)
   {
@@ -31,10 +31,7 @@ export default function App()
     head.innerHTML=('<div id="weinput"><label for=""><strong>Work Experience : </strong></label><br/><label><p>Company Name:</p></label><input type="text" placeholder="Enter Here..." class="form-control weFieldcompany mb-2"/><label><p>Year of Service:</p></label><input type="text" placeholder="Enter Here..." class="form-control weFieldyear mb-2"/><label><p>Job Title:</p></label><input type="text" placeholder="Enter Here..." class="form-control weFieldjobtitle mb-2"/><label><p>Responsibilities/Detail/About Job:</p></label><input type="text" placeholder="Enter Here..." class="form-control weFieldabout mb-2"/></div>');
     addweobj.insertBefore(addwe,weaddbtn);
     setcountweadd((countweadd+1));
-    if(countweadd>5)
-      {
-        showalert("Limit of adding fields is limited","danger");
-      }
+ 
   }
     
   
@@ -47,10 +44,7 @@ export default function App()
     head.innerHTML=('<div id="referinput"><label><strong>References : </strong></label><br/><label><p>Name:</p></label><input type="text" placeholder="Enter Here..." class="form-control referFieldname mb-2"/><label><p>Company Name:</p></label><input type="text" placeholder="Enter Here..." class="form-control referFieldcompany mb-2"/><label><p>Job Title:</p></label> <input type="text" placeholder="Enter Here..." class="form-control referFieldjobt mb-2"/><label><p>Contact -may be email,number:</p></label><input type="text" placeholder="Enter Here..." class="form-control referFieldcontacts mb-2"/></div>');
     addreferobj.insertBefore(addrefer,referaddbtn);
     setcountreferadd((countreferadd+1));
-    if(countreferadd>5)
-      {
-        showalert("Limit of adding fields is limited","danger");
-      }
+   
   }
   
 
@@ -60,13 +54,19 @@ export default function App()
     {
       const head=document.createElement('div');
       let addaq=addaqobj.appendChild(head);
-      head.innerHTML=(`<div id="aqinput"><label><strong>Academic Qualifications/Educational Details : </strong></label><br/><label><p>Session/Year:</p></label><input type="text" placeholder="Enter Here..." class="form-control aqFieldyear mb-2"/><label><p>Degree Name:</p></label><br/><input type="text" placeholder="Enter Here..." class="form-control aqFielddeg mb-2"/><label><p>School/College Name:</p></label><input type="text" placeholder="Enter Here..." class="form-control weFieldscname mb-2"/><label><p>Detail -may be about cgpa/sgpa/percentage/marks:</p></label><br/> <input type="text" placeholder="Enter Here..." class="form-control weFieldabout mb-2"/></div>`);                  
+      head.innerHTML=(`<div id="aqinput">
+                                <label><strong>Academic Qualifications/Educational Details : </strong></label><br/>
+                                <label><p>Degree Name:</p></label>
+                                <input type="text" placeholder="Enter Here..." class="form-control aqFielddeg mb-2"/>
+                                <label><p>Session/Year:</p></label>
+                                <input type="text" placeholder="Enter Here..." class="form-control aqFieldyear mb-2"/>
+                                <label><p>School/College Name:</p></label>
+                                <input type="text" placeholder="Enter Here..." class="form-control aqFieldscname mb-2"/>
+                                <label><p>Detail -may be about cgpa/sgpa/percentage/marks:</p></label>
+                                <input type="text" placeholder="Enter Here..." class="form-control aqFieldabout mb-2"/>
+                        </div>`);                  
       addaqobj.insertBefore(addaq,aqaddbtn);
       setcountaqadd((countaqadd+1));
-      if(countaqadd>5)
-        {
-          showalert("Limit of adding fields is limited","danger");
-        }
     }
 
 
@@ -79,10 +79,7 @@ export default function App()
     head.innerHTML=('<div id="projectsinput"><label><strong>Projects : </strong></label><br/><label><p> Project Name:</p></label><input type="text" placeholder="Enter Here..." class="form-control projectsFieldname mb-2"/><label><p>Duration:</p></label><input type="text" placeholder="Enter Here..." class="form-control projectsFielddur mb-2"/> <label><p>Tech-Stack Used:</p></label><input type="text" placeholder="Enter Here..." class="form-control projectsFieldtech mb-2"/><label><p>Detail/Summary/About</p></label><input type="text" placeholder="Enter Here..." class="form-control projectsFieldabout mb-2"/></div>');
     addprojectsobj.insertBefore(addprojects,projectsaddbtn);
     setcountpadd((countpadd+1));
-      if(countpadd>5)
-        {
-          showalert("Limit of adding fields is limited","danger");
-        }
+      
   }
   
 
@@ -205,7 +202,7 @@ export default function App()
     else
       {
         setMode("light");
-        document.body.style.backgroundColor='rgb(187, 190, 199)';
+        document.body.style.backgroundColor='#c2c8f4';
         showalert("Light Mode is Enabled !!",'success');
       }
   }
@@ -490,7 +487,7 @@ if(aqs)
         }
     }
   
-aqs.innerHTML=straq;
+   aqs.innerHTML=straq;
    }
    else{
      console.log("NO ELEMENT FOUND HAVING ID "+aqall);
@@ -664,28 +661,28 @@ else{
   }
 
  
-  
- 
   function PrintCVpdf()
-  {
-    console.log("printed in pdf");
+  {window.alert("If The Colours Or Graphics Are Not Visible ,PLEASE Tick The 'Background Graphics' Option in the 'More Settings'...")
+
+   window.print();
+   
   }
 
-  function PrintCVword()
-  {
-    console.log("printed in word");
-  }
+  // function PrintCVword()
+  // {
+  //   console.log("printed in word");
+  // }
 
-  function PrintCVimage()
-  {
-    console.log("printed in image");
-  }
+  // function PrintCVimage()
+  // {
+  //   console.log("printed in image");
+  // }
 
   return (
   <>
     <Navbar mode={mode} toggleMode={toggleMode} />
     <Alert alert={alert}/>
-    <Front mode={mode} toggleMode={toggleMode} PrintCVimage={PrintCVimage} PrintCVword={PrintCVword} PrintCVpdf={PrintCVpdf} storeImageurl={storeImageurl} showtime={showtime} addNewawardsField={addNewawardsField} addNewprojectsField={addNewprojectsField} addNewWEField={addNewWEField} addNewcertField={addNewcertField} addNewreferField={addNewreferField} addNewskillsField={addNewskillsField} addNewhobbyField={addNewhobbyField} addNewexpertiseField={addNewexpertiseField} addNewAQField={addNewAQField} addNewlangField={addNewlangField} hideHomePage={hideHomePage} previewCV={previewCV}/>
+    <Front mode={mode} toggleMode={toggleMode} PrintCVpdf={PrintCVpdf} storeImageurl={storeImageurl} showtime={showtime} addNewawardsField={addNewawardsField} addNewprojectsField={addNewprojectsField} addNewWEField={addNewWEField} addNewcertField={addNewcertField} addNewreferField={addNewreferField} addNewskillsField={addNewskillsField} addNewhobbyField={addNewhobbyField} addNewexpertiseField={addNewexpertiseField} addNewAQField={addNewAQField} addNewlangField={addNewlangField} hideHomePage={hideHomePage} previewCV={previewCV}/>
 
   </>
   );

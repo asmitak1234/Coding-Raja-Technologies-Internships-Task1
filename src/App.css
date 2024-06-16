@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(187, 190, 199);
+    background-color: #c2c8f4;
 }
 /* #home-page{
     display: none;
@@ -20,6 +20,7 @@ body{
     display: none;
 }
 
+
 .hidden{
   display: none;
 }
@@ -28,16 +29,30 @@ body{
   bottom: 10px;
 }
  .containertemp1 , .containertemp2 , .containertemp3 , .containertemp4{
-  margin-left: 20%;
+  margin-left: 5vw;
  }
  #lastcomment{
   color: white;
  }
-
+ #printcv{
+  margin-left:15vw ;
+ }
+ #resumetemp1 :hover{
+  scale: 1.1;
+}
+#resumetemp2 :hover{
+  scale: 1.1;
+}
+#resumetemp3 :hover{
+  scale: 1.1;
+}
+ #resumetemp4 :hover{
+    scale: 1.1;
+ }
 
 /* template 1 style */
 .containertemp1 {
-    width: 650px;
+    width: 70vw;
     margin-bottom: 10px;
     background-color: white;
     border: 2px solid black;
@@ -53,8 +68,8 @@ body{
     margin: 0px;
   }
   .containertemp1 .left {
-    width: 14rem;
-    margin-right: 2px;
+    width: 30vw;
+    margin-right: 1px;
     background-color: navy;
    
   }
@@ -91,23 +106,23 @@ body{
   }
   .containertemp1 .contacts{
     margin-top: 50px;
-    margin-bottom: 100px;
+    
   }
   .containertemp1 .expertise{
-    margin-top: 10px;
-    margin-bottom: 100px;
+    margin-top: 50px;
+ 
   }
   .containertemp1 .languages{
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 50px;
+   
   }
   .containertemp1 .skills{
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 50px;
+   
   }
   .containertemp1 .hobbies{
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 50px;
+ 
   }
   .containertemp1 .right .name {
     font-size: 36px;
@@ -131,21 +146,21 @@ body{
     margin-top: 1px;
   }
   
-  .containertemp1 .references {
+  /* .containertemp1 .references {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
   
-  }
+  } */
   
-  .containertemp1 .reference-item {
+  /* .containertemp1 .reference-item {
     width: 20%;
-  }
+  } */
 
 
   /* template 2 style */
   .containertemp2 {
     background-color: white;
-    width: 550px;
+    width: 60vw;
     margin-bottom: 10px;
     border: 2px solid black;
     padding: 20px;
@@ -206,7 +221,7 @@ body{
 /* template 3 style */
 .containertemp3 {
     background-color: white;
-    width:680px;
+    width: 60vw;
     margin-bottom: 10px;
     font-family: Arial, sans-serif;
     border: 2px solid black;
@@ -217,13 +232,13 @@ body{
     display: flex;
 }
 .containertemp3 .left-column {
-    width: 60%;
+    width: 60em;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 .containertemp3 .right-column {
-    width: 40%;
+    width: 40em;
     padding-left: 20px;
 }
 .containertemp3 .contact-details {
@@ -269,7 +284,7 @@ body{
     margin-bottom: 10px;
     background-color: white;
     font-family: Arial, sans-serif;
-    width: 570px;
+    width: 60vw;
     border: 2px solid black;
     padding: 20px;
 }
