@@ -5,7 +5,7 @@ export default function Navbar(props)
 {
     return(
         <>
-        <nav className={`navbar navbar-expand-lg bg-${props.mode==='dark'?'#042743':'#c2c8f4'}`}>
+        <nav id="navbar-component" className={`navbar navbar-expand-lg bg-${props.mode==='dark'?'#042743':'#c2c8f4'}`}>
             <div className="container-fluid">
                 <a className="navbar-brand" href="/" style={{color:props.mode==='dark'?'white':'black',}}><strong>EasyResumes</strong></a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +20,6 @@ export default function Navbar(props)
             
         </nav>
         <hr style={{border: "2px solid white",margin:"0px",}}></hr>
-    
         </>
     )
 }

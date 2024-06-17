@@ -52,7 +52,7 @@ body{
 
 /* template 1 style */
 .containertemp1 {
-    width: 70vw;
+    width: 80vw;
     margin-bottom: 10px;
     background-color: white;
     border: 2px solid black;
@@ -160,7 +160,7 @@ body{
   /* template 2 style */
   .containertemp2 {
     background-color: white;
-    width: 60vw;
+    width: 80vw;
     margin-bottom: 10px;
     border: 2px solid black;
     padding: 20px;
@@ -221,7 +221,7 @@ body{
 /* template 3 style */
 .containertemp3 {
     background-color: white;
-    width: 60vw;
+    width: 80vw;
     margin-bottom: 10px;
     font-family: Arial, sans-serif;
     border: 2px solid black;
@@ -284,7 +284,7 @@ body{
     margin-bottom: 10px;
     background-color: white;
     font-family: Arial, sans-serif;
-    width: 60vw;
+    width: 80vw;
     border: 2px solid black;
     padding: 20px;
 }

@@ -663,7 +663,10 @@ else{
  
   function PrintCVpdf()
   {window.alert("If The Colours Or Graphics Are Not Visible ,PLEASE Tick The 'Background Graphics' Option in the 'More Settings'...")
-
+   document.querySelector("#navbar-component").style.display="none";
+   document.querySelector("#alert-component").style.display="none";
+   document.querySelector("#lastcomment").style.display="none";
+   document.querySelector("#printcv").style.display="none";
    window.print();
    
   }
