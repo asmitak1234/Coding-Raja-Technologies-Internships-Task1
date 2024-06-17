@@ -1,4 +1,6 @@
 # Coding-Raja-Technologies-Internships-Task1
+#Resume-Builder
+#EasyResumes 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
